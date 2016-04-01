@@ -21,7 +21,6 @@ angular.module('shortly.services', [])
       method: 'GET',
       url: '/api/links'
     }).then(function(data) {
-      console.log(data.data);
       return data.data;
     }, function(err) {
       console.log('You suck');
