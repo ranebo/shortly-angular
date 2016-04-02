@@ -1,6 +1,8 @@
 <div id='container' ng-controller="LinksController as linkCTRL">
   <!-- Your html here -->
-  <div class='link' ng-repeat="link in data.links">
+  <input type='text' ng-model='filterBar.title' placeholder='Search for links'>
+
+  <div class='link' ng-repeat="link in data.links | filter: filterBar:strict | orderBy: '-visits'">
   <img src='../assets/redirect_icon.png'/>
    <div class='info'>
      <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>

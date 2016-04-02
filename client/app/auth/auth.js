@@ -5,7 +5,8 @@ angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
-  
+  $scope.nameTaken = false;
+
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
@@ -16,20 +17,25 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+
   $scope.signout = function() {
     Auth.signout();
   };
+
   $scope.isAuth = function() {
     return Auth.isAuth();
   };
+  
   $scope.signup = function () {
     Auth.signup($scope.user)
       .then(function (token) {
+        $scope.nameTaken = false;
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
       })
       .catch(function (error) {
         console.error(error);
+        $scope.nameTaken = true;
       });
   };
 });

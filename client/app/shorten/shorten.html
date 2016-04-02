@@ -2,11 +2,11 @@
 <!-- Your code here -->
   <div class="shortenLink">
    <form>
-        <input ng-class="isValidUrl() ? 'invalid' : ''" ng-model="newLink" class='text ' type='text' name='url'>
+        <input ng-class="isValidUrl() ? 'invalid' : ''" ng-model="newLink" class='text ' type='text' name='url' required>
         <input ng-click="addLink()" type='submit' value='Shorten'>
     </form>
     <img class='spinner' src='../assets/spiffygif_46x46.gif' ng-show="showSpin">
-    <div class='message' ng-show="isValidUrl()">You're bad and you should feel bad</div>
+    <div class='message' ng-show="isValidUrl()">URL Not Valid</div>
 
     <div class='link' ng-show="lastlink">
       <img src='../assets/redirect_icon.png'/>

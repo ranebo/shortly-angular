@@ -4,9 +4,11 @@ angular.module('shortly.links', [])
   // Your code here
   $scope.data = {};
 
+  // $scope.filterBar = '';
+
   $scope.init = function() {
-    Links.getAll().then(function(data) {
-      $scope.data.links = data;
+    Links.getAll().then(function(allLinks) {
+      $scope.data.links = allLinks;
     });
   };
 

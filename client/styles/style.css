@@ -7,6 +7,9 @@ body {
 .invalid {
   outline-color: red;
 }
+.nametaken {
+  border: 2px solid red;
+}
 
 a {
   color: #333;
