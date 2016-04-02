@@ -1,21 +1,7 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  // Your code here
-  // return {
-  //   getAll: function() {
-  //     return $http({
-  //       method: 'GET',
-  //       url: '/api/links',
-  //     });
-  //   },
-  //   addOne: function(link) {
-  //     return $http({
-  //       method: 'POST',
-  //       url: '/api/links',
-  //       data: link
-  //     });
-  //   },
+
   var getAll = function() {
     return $http({
       method: 'GET',
@@ -75,6 +61,7 @@ angular.module('shortly.services', [])
   };
 
   var signout = function () {
+    console.log('SIGNOUT CALLED');
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
   };

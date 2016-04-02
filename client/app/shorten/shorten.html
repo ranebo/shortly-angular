@@ -1,6 +1,18 @@
-<div id='container'>
+<div id='container' ng-controller="ShortenController as shortCTRL">
 <!-- Your code here -->
-
+  <div class="shortenLink">
+   <form>
+        <input ng-model="newLink" class='text' type='text' name='url'>
+        <input ng-click="addLink()" type='submit' value='Shorten'>
+    </form>
+    <img class='spinner' src='../assets/spiffygif_46x46.gif'>
+    <div class='message'></div>
+  </div>
+  <pre>
+    {{newLink}}
+    </pre>
 </div>
+
+
 
 
