@@ -1,18 +1,9 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, theLinks) {
   // Your code here
-  $scope.data = {};
-
-  // $scope.filterBar = '';
-
-  $scope.init = function() {
-    Links.getAll().then(function(allLinks) {
-      $scope.data.links = allLinks;
-    });
+  $scope.data = {
+    links: theLinks
   };
-
-  $scope.init();
-
 
 });
