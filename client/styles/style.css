@@ -4,6 +4,10 @@ body {
   font-family: arial, sans-serif;
 }
 
+.invalid {
+  outline-color: red;
+}
+
 a {
   color: #333;
   font-size: 14px;

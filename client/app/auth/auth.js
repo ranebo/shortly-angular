@@ -20,7 +20,6 @@ angular.module('shortly.auth', [])
     Auth.signout();
   };
   $scope.isAuth = function() {
-    console.log(Auth.isAuth());
     return Auth.isAuth();
   };
   $scope.signup = function () {

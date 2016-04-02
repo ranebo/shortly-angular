@@ -18,6 +18,10 @@ angular.module('shortly.services', [])
       method: 'POST',
       url: '/api/links',
       data: link
+    }).then(function(data) {
+      return data.data;
+    }).catch(function(err) {
+      return err;
     });
   };
   return {
@@ -61,7 +65,6 @@ angular.module('shortly.services', [])
   };
 
   var signout = function () {
-    console.log('SIGNOUT CALLED');
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
   };

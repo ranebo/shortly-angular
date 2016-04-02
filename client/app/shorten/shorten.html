@@ -2,15 +2,22 @@
 <!-- Your code here -->
   <div class="shortenLink">
    <form>
-        <input ng-model="newLink" class='text' type='text' name='url'>
+        <input ng-class="isValidUrl() ? 'invalid' : ''" ng-model="newLink" class='text ' type='text' name='url'>
         <input ng-click="addLink()" type='submit' value='Shorten'>
     </form>
-    <img class='spinner' src='../assets/spiffygif_46x46.gif'>
-    <div class='message'></div>
+    <img class='spinner' src='../assets/spiffygif_46x46.gif' ng-show="showSpin">
+    <div class='message' ng-show="isValidUrl()">You're bad and you should feel bad</div>
+
+    <div class='link' ng-show="lastlink">
+      <img src='../assets/redirect_icon.png'/>
+       <div class='info'>
+         <div class='visits'><span class='count'>{{lastlink.visits}}</span>Visits</div>
+         <div class='title'>{{lastlink.title}}</div>
+         <div class='original'>{{lastlink.url}}</div>
+         <a href='{{lastlink.baseUrl}}/{{lastlink.code}}'>{{lastlink.baseUrl}}/{{lastlink.code}}</a>
+       </div>
+    </div>
   </div>
-  <pre>
-    {{newLink}}
-    </pre>
 </div>
 
 
